@@ -1,0 +1,17 @@
+/* Animation CSS */
+
+.ANIMATION_slide_in
+{
+    animation: slideIn 0.75s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(5vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

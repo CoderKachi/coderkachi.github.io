@@ -1,0 +1,65 @@
+/* Card CSS */
+
+.card_left
+{
+    position: relative;
+    width: 100% + 40px; 
+    min-height: 240px; 
+    overflow: hidden; /* Prevent content from overflowing */
+    margin-top: 20px;
+    margin-right: 40px;
+
+    border-radius: 10px;
+    background-image: url('/assets/images/placeholder_2.png'); /* Placeholder image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-size: auto;
+    background-position: center; 
+}
+
+.card_right
+{
+    position: relative; 
+    width: 100% - 40px; 
+    min-height: 240px;
+    overflow: hidden; /* Prevent content from overflowing */
+    margin-top: 20px;
+    margin-left: 40px;
+
+    border-radius: 10px;
+    background-image: url('/assets/images/placeholder_2.png'); /* Placeholder image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-size: auto; 
+    background-position: center;
+}
+
+/* Overlay for dimming */
+.card_left::after,
+.card_right::after {
+    content: ""; /*Pseudo-Element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card_content 
+{
+    position: relative;
+    z-index: 1;
+    padding: 20px; 
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Align things to the right */
+.card_right .card_content 
+{
+    align-items: flex-end;
+    text-align: right;
+}
+

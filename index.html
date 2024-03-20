@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang=”en” manifest="/cache.appcache">
+    <head>
+        <title>Kinanachi</title>
+        <meta charset="utf-8">
+
+        <!-- Download font from Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap" rel="stylesheet">
+
+        <!-- Load styles -->
+        <link rel="stylesheet" href="/styles/primary.css">
+        <link rel="stylesheet" href="/styles/banner.css">
+        <link rel="stylesheet" href="/styles/card.css">
+        <link rel="stylesheet" href="/styles/navbar.css">
+        
+        <!-- Load CSS animations -->
+        <link rel="stylesheet" href="/styles/animations.css">
+    </head>
+
+    <!-- The Page -->
+    <body class="root">
+
+        <!-- STATIC CONTENT -->
+        <div class="banner" id="banner">
+            <div class="banner-content">
+                <!-- Name & Socials -->
+                <div class="banner_upper">
+                    <div class="banner-text">
+                        <h1>K I N A N A C H I</h1>
+                        <p>G A M E   P R O G R A M M E R</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="Linkedin"></a>
+                    </div>
+                </div>
+                <!-- Navigation Bar -->
+                <div class="banner_lower">
+                    <div class="nav_container">
+                        <nav>
+                            <ul>
+                                <li><a href="" id="home" class="selected">H O M E</a></li>
+                                <li><a href="" id="projects">P R O J E C T S</a></li>
+                                <li><a href="" id="contact">C O N T A C T</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- To hide top 20px -->
+        <div class="banner_mask"></div>
+        
+        <!-- DYNAMIC CONTENT -->
+        <div id="dynamic_content">
+
+            <!-- Home Page -->
+            <div class="card_left ANIMATION_slide_in">
+                <div class="card_content">
+                    <h2>H E L L O</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+            <div class="card_right ANIMATION_slide_in">
+                <div class="card_content">
+                    <h2>B A C K G R O U N D</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/content_loader.js"></script>
+        <script src="scripts/banner_parallax.js"></script>
+    </body>
+</html>

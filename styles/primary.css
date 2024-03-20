@@ -1,0 +1,26 @@
+/* Core CSS*/
+
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2e303e;
+    color: white;
+}
+
+p 
+{
+    font-size: 18px;
+}
+
+.root
+{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

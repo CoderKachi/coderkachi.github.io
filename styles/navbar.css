@@ -1,0 +1,60 @@
+/* Navigation Bar CSS */
+
+.nav_container 
+{
+    width: 100%; 
+    background-color: #16171e;
+    position: relative;
+    top: 32px; /* Hacky(?) way to move container down without influencing parents*/
+    border-bottom: 4px solid #16171e;
+}
+
+nav 
+{
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li 
+{
+    display: inline;
+}
+
+nav ul li a 
+{
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Button = IS Selected OR IS Hovered */
+nav ul li a.selected,
+nav ul li a:hover 
+{
+    color: #ec973e;
+    border-bottom: 4px solid #ec973e;
+}
+
+/* Button = NOT Selected AND IS Hovered */
+nav ul li a:not(.selected):hover 
+{
+    border-bottom: 4px solid #ec983e85;
+}
+
+/* Button = NOT Selected AND NOT Hovered */
+nav ul li a:not(.selected) 
+{
+    opacity: 0.75;
+    border-bottom: none;
+    color: rgba(255, 255, 255, 0.5);
+}
