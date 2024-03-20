@@ -10,6 +10,7 @@
     z-index: 999; /* Ensure the masking bar is above other content */
 }
 
+
 .banner 
 {
     position: relative; 
@@ -18,7 +19,7 @@
     border-radius: 10px;
     background-image: url('/assets/images/placeholder_1.png'); /* Placeholder image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
-    background-size: auto; 
+    background-size: 120%; 
     background-position: center 30%; 
     display: flex;
     align-items: center; 
@@ -28,6 +29,7 @@
     top: 20px;
     z-index: 1000; /* Make banner above other content */
 }
+
 
 /* Overlay for dimming */
 .banner::after 
@@ -69,9 +71,25 @@
     white-space: pre-wrap;
 }
 
-.social-icons a 
+.subtext 
 {
-    margin-left: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.social-icons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon 
+{
+    width: 40px;
+    height: auto; 
+    fill: white;
+    margin-left: 30px;
 }
 
 .banner_upper 
