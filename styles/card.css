@@ -10,7 +10,7 @@
     margin-right: 40px;
 
     border-radius: 10px;
-    background-image: url('/assets/images/placeholder_2.png'); /* Placeholder image */
+    background-image: url('/assets/images/placeholder.png'); /* Placeholder image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
     background-size: auto;
     background-position: center; 
@@ -26,7 +26,7 @@
     margin-left: 40px;
 
     border-radius: 10px;
-    background-image: url('/assets/images/placeholder_2.png'); /* Placeholder image */
+    background-image: url('/assets/images/placeholder.png'); /* Placeholder image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
     background-size: auto; 
     background-position: center;

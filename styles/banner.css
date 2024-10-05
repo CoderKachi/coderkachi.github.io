@@ -17,9 +17,9 @@
     height: 180px;
     overflow: hidden; /* Prevent stuff from overflowing */
     border-radius: 10px;
-    background-image: url('/assets/images/placeholder_1.png'); /* Placeholder image */
-    background-repeat: no-repeat; /* Prevent the background from repeating */
-    background-size: 120%; 
+    background-image: url('/assets/images/coderkachi_background.png'); /* Placeholder image */
+    background-repeat: repeat; /* Prevent the background from repeating */
+    background-size: 90%; 
     background-position: center 30%; 
     display: flex;
     align-items: center; 

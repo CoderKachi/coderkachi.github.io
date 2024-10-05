@@ -8,7 +8,7 @@ function lerp(start, end, t)
 }
 
 // Constants
-const yOffset = -120;
+const yOffset = -20;
 
 // Variables
 let prevMouseX = 0;
@@ -25,8 +25,8 @@ document.addEventListener('mousemove', function(event)
     const windowCenterX = window.innerWidth / 2;
     const windowCenterY = window.innerHeight / 2;
 
-    targetOffsetX = (mouseX - windowCenterX) / 20;
-    targetOffsetY = ((mouseY - windowCenterY) / 20) + yOffset;
+    targetOffsetX = (mouseX - windowCenterX) / 16;
+    targetOffsetY = ((mouseY - windowCenterY) / 16) + yOffset;
     prevMouseX = mouseX;
     prevMouseY = mouseY;
 });
