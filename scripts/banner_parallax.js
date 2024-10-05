@@ -8,7 +8,7 @@ function lerp(start, end, t)
 }
 
 // Constants
-const yOffset = -170;
+const yOffset = -120;
 
 // Variables
 let prevMouseX = 0;
