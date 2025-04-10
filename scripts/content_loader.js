@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function()
     // Reference for container div
     var contentDiv = document.getElementById("dynamic_content");
 
-    // Fetch HTML content from a path (or URL if you really want to)
+    // Fetch HTML content from a path
     async function fetchAndLoadHTML(path) 
     {
         try 
@@ -26,36 +26,52 @@ document.addEventListener("DOMContentLoaded", function()
         // Clear existing stuff
         contentDiv.innerHTML = "";
 
+        let contentHTML = null;
+
         switch (contentName) 
         {
             case "home":
-                const homeHTML = await fetchAndLoadHTML("pages/home.html");
-                if (homeHTML) 
-                {
-                    contentDiv.innerHTML = homeHTML;
-                }
+                contentHTML = await fetchAndLoadHTML("pages/home.html");
                 break;
             case "projects":
-                const aboutHTML = await fetchAndLoadHTML("pages/projects.html");
-                if (aboutHTML) 
-                {
-                    contentDiv.innerHTML = aboutHTML;
-                }
+                contentHTML = await fetchAndLoadHTML("pages/projects.html");
                 break;
             case "contact":
-                const contactHTML = await fetchAndLoadHTML("pages/contact.html");
-                if (contactHTML) 
-                {
-                    contentDiv.innerHTML = contactHTML;
-                }
+                contentHTML = await fetchAndLoadHTML("pages/contact.html");
                 break;
             default:
                 contentDiv.innerHTML = "<h1>404 Not Found</h1><p>Page not found.</p>";
+                return;
+        }
+
+        if (contentHTML)
+        {
+            contentDiv.innerHTML = contentHTML;
+            await populateCardSlots();
         }
 
         // Update button styles
         updateButtonStyles(contentName);
     }
+
+    async function populateCardSlots()
+    {
+        const cardSlots = contentDiv.querySelectorAll(".card_slot");
+
+        for (const cardSlot of cardSlots)
+        {
+            const cardName = cardSlot.getAttribute("data-card");
+            if (cardName)
+            {
+                const cardHTML = await fetchAndLoadHTML(`content/${cardName}.html`);
+                if (cardHTML)
+                {
+                    cardSlot.outerHTML = cardHTML;
+                }
+            }
+        }
+    }
+
 
     // Function to update button styles
     function updateButtonStyles(selectedButtonId) 
@@ -88,4 +104,6 @@ document.addEventListener("DOMContentLoaded", function()
             loadContent(link.id);
         });
     });
+
+    loadContent("home");
 });

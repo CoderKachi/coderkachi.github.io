@@ -1,0 +1,45 @@
+<div class="card ANIMATION_slide_in">
+    <div class="card_header">
+        <h2 class="card_title">K T X T</h2>
+        <div class="card_divider"></div>
+        <div class="card_content">
+            <p>
+                A demonstration of real-time chat within a web application wrapped as a mini game.
+            </p>
+        </div>
+        <div class="tags">
+            <div class="tag tag_language">JavaScript</div>
+            <div class="tag tag_language">mySQL</div>
+            <div class="tag tag_engine">Node.js</div>
+            <div class="tag">Web Development</div>
+            <div class="tag">University</div>
+            <div class="tag tag_date">2023</div>
+        </div>
+    </div>
+    <div class="card_content">
+        <p>
+            TXT allows users to interact through a global chat. Users will be required to register an account and login in order to send messages and add other users as friends 
+            (however the global chat can still be spectated regardless of login status). Users gain score by being the first to type the word sent by the server.
+        </p>
+        <!-- Pretend there's an imagine lol -->
+        <br><br><br><br>
+        <p>
+            Kinetik TXT utilised various architectures.
+            <br><br>
+            Frontend (Presentation Tier) <br>
+            The frontend was developed using HTML, CSS and JavaScript. EJS is the templating engine which I used to generate content dynamically and condense code.
+            <br><br>
+            Backend (Application Tier) <br>
+            The backend was developed using Node.js and Express.js. It authenticates users, interacts with the database and deals with requests.
+            <br><br>
+            Communication <br>
+            Socket.io was used to achieve real time bidirectional communication between the server and clients via websockets. It is also compatible with express-session.
+            <br><br>
+            Database (Data Tier) <br>
+            mySQL is used as the relational database to store data (user data, friendships and useful procedures)
+            <br><br>
+            Security <br>
+            Bcrypt is used to hash user passwords and express-validator, express-sanitizer and validator were used for data validation / sanitation.
+        </p>
+    </div>
+</div>

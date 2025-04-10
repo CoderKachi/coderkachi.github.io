@@ -1,0 +1,51 @@
+/* Tags CSS */
+
+.tags 
+{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tag 
+{
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #6b6bb8;
+    color: #171727;
+    z-index: 1;
+}
+
+/* Tag Colours */
+
+.tag_engine
+{
+    background-color: #ec973e;
+    color: #1f1408
+}
+
+.tag_language 
+{
+    background-color: #4085F5;
+    color: #0b1629
+}
+
+.tag_other
+{
+    background-color: #6b6bb8;
+    color: #171727
+}
+
+.tag_important
+{
+    background-color: #d46161;
+    color: #220f0f
+}
+
+.tag_date
+{
+    background-color: #82b16d;
+    color: #1d2718 
+}
