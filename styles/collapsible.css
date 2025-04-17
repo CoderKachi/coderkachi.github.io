@@ -1,0 +1,77 @@
+.collapsible 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background-color: #ec983ea6;
+    color: #0e0904;
+    cursor:pointer;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.collapsible:hover 
+{
+    background-color: #ec983ec9;
+    color: #1f1408;
+}
+
+.collapsible.active 
+{
+    background-color: #ec973e;
+    color: #1f1408;
+}
+
+.collapsible-code
+{
+    font-family: 'Consolas', monospace;
+    font-size: 16px;
+    background-color: #4085f5b6;
+    color: #060d18;
+}
+
+.collapsible-code:hover
+{
+    background-color: #4085f5d0;
+    color: #060d18;
+}
+
+.collapsible-code.active 
+{
+    background-color: #4085F5;
+    color: #0b1629;
+}
+
+.collapsible-nomargin
+{
+    margin-top: 0px;
+}
+
+.collapsible_panel 
+{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background-color: #ffffff00;
+    padding-left: 16px;
+    border-left: 3px solid #ffffff;
+    margin-top: 16px;
+    margin-left: 16px;
+    border-radius: 0px;
+}
+
+.collapsible_label
+{
+    flex: 1; /* take up the space between the two icons */
+    margin: 0 8px;
+    white-space: pre-wrap;
+}

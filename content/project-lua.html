@@ -1,0 +1,130 @@
+<div class="card card-default anim-slidein">
+    <div class="card_header" style="background-image: url('/assets/images/project_stella01.png'); background-position: center 30%;">
+        <!-- BACKGROUND CONTENT -->
+        <div class="overlay overlay-default"></div>
+
+        <!-- HEADER CONTENT -->
+        <h2 class="card_title">V A R I O U S   L U A   P R O J E C T S</h2>
+        <div class="card_divider"></div>
+        <p class="font-default">I created various prototypes written in LUA.</p>
+        <div class="tag_container">
+            <div class="tag tag-language">Lua</div>
+            <div class="tag tag-engine">ROBLOX Engine</div>
+            <div class="tag">Game Development</div>
+            <div class="tag tag-date">pre 2023</div>
+        </div>
+    </div>
+
+    <div class="card_content">
+        <!-- INTRODUCTION -->
+        <p class="font-default p-padding">
+            ROBLOX Studio was one of the main entry points that got me into programming, mostly by modding existing scripts which eventually progressed
+            to creating my own scripts and experimental projects from the ground up.
+        </p>
+
+        <!-- STELLA PROTOTYPE START-->
+        <h3 class="card_title">S T E L L A  Prototype</h3>
+        <video class="card_video" autoplay muted loop controls>
+            <source src="/assets/videos/placeholder.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+
+        <h3 class="card_title pad-top-16">Key Features</h3>
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-layer-group"></i>
+            <span class="collapsible_label">Procedural Level Generation</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I implemented Procedural Level Generation mostly by using Binary Space Partitioning to divide and create rooms 
+                and a Minimum Spanning Tree algorithm to help ensure all rooms can be reached.
+            </p>
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-dolly"></i>
+                <span class="collapsible_label">Object Placement</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>
+                    Objects could be easily placed onto the level since it was all grid / room based. I had a variation of rooms and tiles that would
+                    be placed as the final steps of the generation process.
+                </p>
+            </div>
+        </div>
+        
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-person-rifle"></i>
+            <span class="collapsible_label">Weapon Framework</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                Projectiles are "simulated" using raycasts. This makes them fairly performant and allows for a
+                high level of control of their behaviour, such as predictable ricochet angles off walls.
+            </p>
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span class="collapsible_label">Recoil & Basic VFX</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>I implemented some camera recoil to compliment the partical effects.</p>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-film"></i>
+            <span class="collapsible_label">Basic Procedural Animation</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I incorporated some basic procedural animations to complement the static animations that the custom chacacters used.
+                The head would be look towards the mouse and was clamped to not look un-natural when players attempted to look backwards while 
+                the entire character would tilted towards the direction they were rotating towards during motion.
+            </p>
+        </div>
+        
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <span class="collapsible_label">Simple Enemy AI</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I implemented some basic AI that would shoot at the player via the Weapon Framework. Naturally they can only do this when the 
+                player is within range and in line of sight. If the player falls out of their line of sight they move towards the last position 
+                they saw the player at.
+            </p>
+        </div>
+        <!-- STELLA PROTOTYPE END -->
+
+        <!-- COMPLEX PROTOTYPE-->
+        <h3 class="card_title">C O M P L E X  Prototype</h3>
+        <video class="card_video" autoplay muted loop controls>
+            <source src="/assets/videos/project-complex01.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+        
+        <h3 class="card_title pad-top-16">Key Features</h3>
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-eye"></i>
+            <span class="collapsible_label">Line of Sight Simulation & Wall Culling</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I implemented a feature which allowed me to hide rooms and characters that were out of the player's line of sight. I also
+                implemented another feature that would lower the 2 walls that would partially obscure objects beside said wall 
+                (due to the camera angle being used).
+            </p>
+        </div>
+    </div>
+</div>

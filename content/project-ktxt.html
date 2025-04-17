@@ -1,0 +1,179 @@
+<div class="card card-default anim-slidein">
+    <div class="card_header" style="background-image: url('/assets/images/kinetiktxt01.png'); background-position: center 71%;">
+        <!-- BACKGROUND CONTENT -->
+        <div class="overlay overlay-default"></div>
+
+        <!-- ICON LINKS -->
+        <div class="card_link_container">
+            <a href="https://github.com/CoderKachi/coderkachi.ktxt" class="card_link font-large" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <!-- HEADER CONTENT -->
+        <h2 class="card_title">K I N E T I K   T X T</h2>
+        <div class="card_divider"></div>
+        <p class="font-default">A demonstration of real-time chat within a web application wrapped as a mini game.</p>
+        <div class="tag_container">
+            <div class="tag tag-language">JavaScript</div>
+            <div class="tag tag-language">mySQL</div>
+            <div class="tag tag-engine">Node.js</div>
+            <div class="tag">Web Development</div>
+            <div class="tag">University</div>
+            <div class="tag tag-date">2023</div>
+        </div>
+    </div>
+    <div class="card_content">
+        <!-- INTRODUCTION -->
+        <p class="font-default p-padding">
+            Kinetik TXT allows users to interact through a global chat. Users will be required to register an account and login in order to send messages and add other users as friends 
+            (however the global chat can still be spectated regardless of login status). Users gain score by being the first to type the word sent by the server.
+        </p>
+
+        <!--
+        <h3 class="card_title">Showcase</h3>
+        <video class="card_video" autoplay muted loop controls>
+            <source src="/assets/videos/roblox_rendering.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+        -->
+        
+        <h3 class="card_title">Key Features</h3>
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-display"></i>
+            <span class="collapsible_label">Frontend</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                The frontend was developed using HTML, CSS and JavaScript. EJS is the templating engine which I used to generate content dynamically and condense code.
+            </p>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-server"></i>
+            <span class="collapsible_label">Backend</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                The backend was developed using Node.js and Express.js. It authenticates users, interacts with the database and deals with requests.
+            </p>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-message"></i>
+                <span class="collapsible_label">Communication</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>
+                    Socket.io was used to achieve real time bidirectional communication between the server and clients via websockets. It is also compatible with express-session.
+                </p>
+
+                <!-- COLLAPSIBLE -->
+                <button class="collapsible font-default collapsible-code">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="collapsible_label font-code">index.js [Code Snippet]</span>
+                    <i class="fa-solid fa-plus collapsible_icon"></i>
+                </button>
+                <div class="collapsible_panel">
+                    <pre><code class="language-javascript">
+async function fireSendGlobalMessage(socket, sessionData, message)
+{
+    if (sessionData.user_id)
+    {
+        // Make sure the message actually exists
+        if (message !== null && message.trim() !== "")
+        {
+            // Clean the message
+            message = validator.escape(message)
+            console.log(`Global Message received from User ${sessionData.username}(${sessionData.user_id})`)
+
+            // Add the new message to storage
+            globalMessageStorage.push({user_id: sessionData.user_id, username: sessionData.username, content: message, time: new Date().toISOString() })
+    
+            // Increase their message score
+            let query = 
+            `
+                UPDATE Users
+                SET message_score = message_score + 1
+                WHERE user_id = ?
+            `
+            await databaseQuery(query, sessionData.user_id)
+
+            // Check if new message matches the random word
+            if (message === randomWord)
+            {
+                // Increase their score
+                let query = 
+                `
+                    UPDATE Users
+                    SET score = score + 1
+                    WHERE user_id = ?
+                `
+                await databaseQuery(query, sessionData.user_id)
+
+                // Then get their current score
+                query = "SELECT score FROM Users WHERE user_id = ?"
+                const userScore = (await databaseQuery(query, sessionData.user_id))[0]
+                let score = "x"
+                if (userScore)
+                {
+                    score = userScore.score
+                }
+
+                globalMessageStorage.push({user_id: "", username: "KinetikTXT", content: `${sessionData.username} SCORED A POINT! THEY NOW HAVE ${score} POINTS!`, time: new Date().toISOString() })
+
+                randomWord = await callRandomWordAPI()
+                io.emit("updateRandomWord", randomWord)
+            }
+        
+            if (globalMessageStorage.length > globalMessageCapacity)
+            {
+                globalMessageStorage.shift()
+            }
+        
+            console.log("Syncing all Clients")
+            io.emit("updateGlobalMessages", globalMessageStorage)
+        }
+    }
+    else
+    {
+        // Someone may or may not be acting cheeky
+        console.log("Global Message received from an unauthenticated source!")
+    }
+}
+                    </code></pre>
+                </div>
+            </div>
+                
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-lock"></i>
+                <span class="collapsible_label">Security</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>
+                    Bcrypt is used to hash user passwords and express-validator, express-sanitizer and validator were used for data validation / sanitation.
+                </p>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-database"></i>
+            <span class="collapsible_label">Database</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                mySQL is used as the relational database to store data (user data, friendships and useful procedures).
+            </p>
+        </div>
+
+    </div>
+</div>

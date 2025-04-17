@@ -1,0 +1,12 @@
+pre code 
+{
+    display: block;
+    background-color: #00000075;
+    color: #7ea2b4;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 0.8em;
+}

@@ -1,7 +1,9 @@
+import { loadCollapsibles } from './module-collapsible.js';
+
 // Script for dynamically loading content
 document.addEventListener("DOMContentLoaded", function() 
 {
-    // Reference for container div
+    // Reference for dynamic container div
     var contentDiv = document.getElementById("dynamic_content");
 
     // Fetch HTML content from a path
@@ -23,9 +25,8 @@ document.addEventListener("DOMContentLoaded", function()
     // Load content based on navigation clicks
     async function loadContent(contentName) 
     {
-        // Clear existing stuff
+        // Clear existing dynamic content
         contentDiv.innerHTML = "";
-
         let contentHTML = null;
 
         switch (contentName) 
@@ -48,12 +49,14 @@ document.addEventListener("DOMContentLoaded", function()
         {
             contentDiv.innerHTML = contentHTML;
             await populateCardSlots();
+            loadCollapsibles(contentDiv);
         }
 
         // Update button styles
         updateButtonStyles(contentName);
     }
 
+    // CARDS
     async function populateCardSlots()
     {
         const cardSlots = contentDiv.querySelectorAll(".card_slot");
@@ -72,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function()
         }
     }
 
-
-    // Function to update button styles
+    // NAVIGATION
+    // Function to update styles of navigation buttons
     function updateButtonStyles(selectedButtonId) 
     {
         // Get all buttons
@@ -92,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function()
         });
     }
 
-    // Add event listeners to buttons
+    // Add event listeners to navigation buttons
     var navLinks = document.querySelectorAll("nav a");
     navLinks.forEach(function(link) 
     {

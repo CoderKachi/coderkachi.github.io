@@ -1,0 +1,215 @@
+<div class="card card-default anim-slidein">
+    <div class="card_header" style="background-image: url('/assets/images/project_wave01.png'); background-position: center 30%;">
+        <!-- BACKGROUND CONTENT -->
+        <div class="overlay overlay-default"></div>
+
+        <!-- ICON LINKS -->
+        <div class="card_link_container">
+            <a href="https://github.com/nullZ3r0/WAVE" class="card_link font-large" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <!-- HEADER CONTENT -->
+        <h2 class="card_title">W A V E</h2>
+        <div class="card_divider"></div>
+        <p class="font-default">A MIDI Visualiser built for Windows 10/11 that allows for the use of hand gestures and voice commands.</p>
+        <div class="tag_container">
+            <div class="tag tag-language">Java</div>
+            <div class="tag tag-language">Python</div>
+            <div class="tag">Software Development</div>
+            <div class="tag">University</div>
+            <div class="tag tag-date">2023</div>
+        </div>
+    </div>
+    <div class="card_content">
+        <!-- INTRODUCTION -->
+        <p class="font-default p-padding">
+            WAVE was a project I was a part of as Lead Programmer and UI Designer, during my 2nd year at university.
+            The team consisted of 5 members, with 3 (myself included) being programmers.
+        </p>
+
+        <h3 class="card_title">Showcase</h3>
+        <video class="card_video" autoplay muted loop controls>
+            <source src="/assets/videos/placeholder.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+
+        <h3 class="card_title pad-top-16">Key Contributions</h3>
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-brands fa-python"></i>
+            <span class="collapsible_label">Python Integration</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I implemented a Java class called UDPReceiver that listens on port 5005 for UDP packets. 
+                It decodes incoming byte data into strings and triggers commands in the application. 
+                While I implemented this with our own Python sub-applications in mind, any local process with access to that port could send valid commands.
+            </p>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default collapsible-code">
+                <i class="fa-solid fa-code"></i>
+                <span class="collapsible_label font-code">UDPReceiver.java [Code Snippet]</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <pre><code class="language-java">
+public class UDPReceiver implements Runnable // Receieves messages
+{
+    int port = 0;
+    byte[] buffer = new byte[2048];
+    private final AtomicBoolean running = new AtomicBoolean(false);
+    DatagramSocket datagramSocket;
+    DatagramPacket datagramPacket;
+    Thread thread;
+
+    UDPReceiver(int port)
+    {
+        this.port = port;
+        try
+        {
+            this.datagramSocket = new DatagramSocket(this.port);
+            this.datagramPacket = new DatagramPacket(this.buffer, this.buffer.length);
+        }
+        catch
+        (SocketException e)
+        {
+            System.out.println("[!] Failed to initialise UDPReceiver");
+        }
+    }
+
+    public String search()
+    {
+        try
+        {
+            this.datagramSocket.receive(this.datagramPacket); // Searches for sent packets
+            String msg = new String(this.buffer, 0, this.datagramPacket.getLength()); // Receives the message sent
+            //System.out.println(this.datagramPacket.getAddress().getHostName() + ": " + msg);  // Prints out the message sent
+            this.datagramPacket.setLength(buffer.length);
+            return msg;
+        }
+        catch (IOException e)
+        {
+            System.out.println("[!] Failed to search for sent packets");
+        }
+
+        return "";
+    }
+
+    ... 
+}
+                </code></pre>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-display"></i>
+            <span class="collapsible_label">User Interface</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I implemented the UI by building a lightweight set of custom Java Swing components, tailored to our visual style, 
+                supporting rounded corners, layout control, and hover states. 
+                I also implemented a graphics renderer class to handle drawing these custom components accurately, since standard Java Swing couldn't do so.
+            </p>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default collapsible-code">
+                <i class="fa-solid fa-code"></i>
+                <span class="collapsible_label font-code">WaveGraphics.java [Code Snippet]</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <pre><code class="language-java">              
+public static void draw(Component object, Graphics g)
+{
+    // Check if the component actually exists
+    if (object == null) {return;}
+    if (!object.isVisible()) {return;}
+
+    int width = object.getWidth();
+    int height = object.getHeight();
+    Graphics2D graphics = (Graphics2D) g;
+    graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+    /** Draw AppFrames **/
+    if (object.getClass() == AppFrame.class)
+    {
+        AppFrame frame = (AppFrame) object;
+        Dimension arcs = new Dimension(Math.min(frame.transform.getCornerRadius(), height), Math.min(frame.transform.getCornerRadius(), height));
+
+        // Draws the panel (can have rounded corners)
+        graphics.setColor(frame.getBackground());
+        graphics.fillRoundRect(0, 0, width, height, arcs.width, arcs.height);
+    }
+
+    /** Draw Buttons **/
+    else if (object.getClass() == AppButton.class)
+    {
+        AppButton button = (AppButton) object;
+        Dimension arcs = new Dimension(Math.min(button.transform.getCornerRadius(), height), Math.min(button.transform.getCornerRadius(), height));
+
+        // Draws the panel (can have rounded corners)
+        graphics.setColor(button.getBackground());
+        graphics.fillRoundRect(0, 0, width, height, arcs.width, arcs.height);
+
+        if (button.mouseIn())
+        {
+            button.setForeground(AppTheme.button.foregroundHover);
+        }
+        else
+        {
+            button.setForeground(AppTheme.button.foreground);
+        }
+    }
+
+    ...
+}
+                </code></pre>
+            </div>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-palette"></i>
+                <span class="collapsible_label">Themes</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>
+                    The application needed to support multiple themes, so I integrated the FlatLaf library into the project 
+                    and implemented a theme manager class to facilitate this. It handles global UI styling, including dynamic colors, 
+                    transparency and custom fonts. It also contains utility functions for color mixing and fading.
+                </p>
+            </div>
+        </div>
+        
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-guitar"></i>
+            <span class="collapsible_label">Interpreting MIDI Instruments</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                [MidiConnector.java and MidiInputReceiver.java]
+            </p>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-file-audio"></i>
+            <span class="collapsible_label">Interpreting MIDI Files</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                [MidiSequence.java and MidiPlayer.java]
+            </p>
+        </div>
+    </div>
+</div>

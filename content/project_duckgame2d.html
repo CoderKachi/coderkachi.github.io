@@ -1,23 +1,126 @@
-<div class="card ANIMATION_slide_in">
-    <div class="card_header">
-        <h2 class="card_title">D U C K G A M E</h2>
-        <div class="card_divider"></div>
-        <div class="card_content">
-            <p>
-                Ducks against the world!
-            </p>
+<div class="card card-default anim-slidein">
+    <div class="card_header" style="background-image: url('/assets/images/project-duckgame2d01.png'); background-position: center 50%;">
+        <!-- BACKGROUND CONTENT -->
+        <div class="overlay overlay-default"></div>
+
+        <!-- ICON LINKS -->
+        <div class="card_link_container">
+            <a href="https://github.com/PioneerShark/Duck-Game-Redo" class="card_link font-large" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
-        <div class="tags">
-            <div class="tag tag_language">C#</div>
-            <div class="tag tag_engine">Unity Engine</div>
-            <div class="tag tag_engine">FL Studio</div>
+          
+        <!-- HEADER CONTENT -->
+        <h2 class="card_title">D U C K G A M E   2 D</h2>
+        <div class="card_divider"></div>
+        <p>Ducks against the world!</p>
+        <div class="tag_container">
+            <div class="tag tag-language">C#</div>
+            <div class="tag tag-engine">Unity 6</div>
+            <div class="tag tag-engine">FL Studio</div>
             <div class="tag">Game Development</div>
-            <div class="tag tag_important">In Progress</div>
+            <div class="tag tag-important">In Progress</div>
         </div>
     </div>
     <div class="card_content">
-        <p>
-            Cooking rn.
+        <p class="font-default p-padding">
+            Duckgame 2D is a small top-down bullet hell.
+            The team consists of 2 programmers (myself included) with both handling all aspects of the game’s systems and features. 
+            We occasionally have 2 external artists create art assets as needed. 
         </p>
+
+        <p class="font-default p-padding">
+            A key focus of the project has been designing modular, 
+            reusable systems that can be leveraged in larger or alternative Unity projects.
+        </p>
+
+        <h3 class="card_title">Key Contributions</h3>
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span class="collapsible_label">Game Infrastructure & Services</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p class="font-default">
+                To manage core systems like audio, object pooling, and player input, I built a central Service Locator. 
+                Each system was implemented as a self-contained service, easily accessible from anywhere in the game without needing manual setup or scene references.
+                These services are created only when first used, keeping things lightweight and efficient. 
+                Once initialised, they persist across scenes, ensuring they're accessibe throughout the game. 
+                This approach allowed us to keep our core systems modular.
+            </p>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-keyboard"></i>
+                <span class="collapsible_label">User Input Service</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p>
+                    [InputService.cs]
+                </p>
+            </div>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-object-group"></i>
+                <span class="collapsible_label">Object Pooling Service</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p class="font-default">
+                    [PoolService.cs]
+                </p>
+            </div>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-volume-high"></i>
+                <span class="collapsible_label">Audio Service</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p class="font-default">
+                    [AudioService.cs]
+                </p>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-box"></i>
+            <span class="collapsible_label">Entity Class</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p class="font-default">
+                [Entity2D.cs]
+            </p>
+
+            <!-- COLLAPSIBLE -->
+            <button class="collapsible font-default">
+                <i class="fa-solid fa-user"></i>
+                <span class="collapsible_label">Charcater Class</span>
+                <i class="fa-solid fa-plus collapsible_icon"></i>
+            </button>
+            <div class="collapsible_panel">
+                <p class="font-default">
+                    [Charcater2D.cs]
+                </p>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-display"></i>
+            <span class="collapsible_label">User Interface</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p>
+                I'm currently looking into using Unity's UI Toolkit since it's inspired by web technologies.
+            </p>
+        </div>
     </div>
 </div>

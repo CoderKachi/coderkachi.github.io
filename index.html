@@ -7,7 +7,7 @@
         <!-- Download font from Google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
 
         <!-- Load styles -->
         <link rel="stylesheet" href="/styles/primary.css">
@@ -15,7 +15,12 @@
         <link rel="stylesheet" href="/styles/card.css">
         <link rel="stylesheet" href="/styles/tags.css">
         <link rel="stylesheet" href="/styles/navbar.css">
-        
+        <link rel="stylesheet" href="/styles/collapsible.css">
+        <link rel="stylesheet" href="/styles/codesnippet.css">
+
+        <!-- Load icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ 
         <!-- Load CSS animations -->
         <link rel="stylesheet" href="/styles/animations.css">
     </head>
@@ -33,9 +38,9 @@
                         <p>A L A N   R O B I N S O N</p>
                     </div>
                     <div class="social-icons">
-                        <a href="https://github.com/CoderKachi"><img src="assets/icons/icon_github.svg" alt="GitHub" class="social-icon"></a>
-                        <a href="https://www.linkedin.com/in/alan-robinson-8522b6215/"><img src="assets/icons/icon_linkedin.svg" alt="Linkedin" class="social-icon"></a>
-                        <a href="https://itch.io/profile/kinanachi"><img src="assets/icons/icon_itchio.svg" alt="icho.io" class="social-icon"></a>
+                        <a href="https://github.com/CoderKachi" target="_blank"><img src="assets/icons/icon_github.svg" alt="GitHub" class="social-icon"></a>
+                        <a href="https://www.linkedin.com/in/alan-robinson-8522b6215/" target="_blank"><img src="assets/icons/icon_linkedin.svg" alt="Linkedin" class="social-icon"></a>
+                        <a href="https://itch.io/profile/coderkachi" target="_blank"><img src="assets/icons/icon_itchio.svg" alt="icho.io" class="social-icon"></a>
                     </div>
                 </div>
                 <!-- Navigation Bar -->
@@ -58,7 +63,7 @@
         <!-- DYNAMIC CONTENT -->
         <div id="dynamic_content"></div>
 
-        <script src="scripts/content_loader.js"></script>
+        <script type="module" src="scripts/content_loader.js"></script>
         <script src="scripts/banner_parallax.js"></script>
     </body>
 </html>

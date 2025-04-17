@@ -1,10 +1,9 @@
-/* Tags CSS */
-
-.tags 
+.tag_container 
 {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 8px;
 }
 
 .tag 
@@ -18,33 +17,31 @@
     z-index: 1;
 }
 
-/* Tag Colours */
-
-.tag_engine
+.tag-engine
 {
     background-color: #ec973e;
     color: #1f1408
 }
 
-.tag_language 
+.tag-language 
 {
     background-color: #4085F5;
     color: #0b1629
 }
 
-.tag_other
+.tag-other
 {
     background-color: #6b6bb8;
     color: #171727
 }
 
-.tag_important
+.tag-important
 {
     background-color: #d46161;
     color: #220f0f
 }
 
-.tag_date
+.tag-date
 {
     background-color: #82b16d;
     color: #1d2718 
