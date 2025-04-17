@@ -1,5 +1,22 @@
 @media only screen and (hover: none) and (pointer: coarse), (max-width: 812px), (max-device-width: 812px)
 {
+    .root
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    .banner 
+    {
+        top: 16px;
+    }
+
+    .banner_mask 
+    {
+        height: 16px;
+    }
+
     p 
     {
         font-size: 11px !important;
