@@ -14,9 +14,10 @@ body
 
 p 
 {
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 15px !important;
+    line-height: 1.4em;
     font-weight: 300;
+    width: 100%;
 }
 
 .p-padding
@@ -43,17 +44,17 @@ p
 
 .font-default
 {
-    font-size: 15px;
+    font-size: 15px !important;
 }
 
 .font-small
 {
-    font-size: 12px;
+    font-size: 12px !important;
 }
 
 .font-large
 {
-    font-size: 24px;
+    font-size: 30px !important;
 }
 
 .font-white
@@ -66,7 +67,30 @@ p
     font-family: 'Consolas', monospace;
 }
 
+.font-center
+{
+    text-align: center;
+}
+
 .fix-blackline
 {
     padding-bottom: 1px;
+}
+
+@media only screen and (hover: none) and (pointer: coarse)
+{
+    .font-default
+    {
+        font-size: 13px !important;
+    }
+    
+    .font-small
+    {
+        font-size: 10px !important;
+    }
+    
+    .font-large
+    {
+        font-size: 28px !important;
+    }
 }
