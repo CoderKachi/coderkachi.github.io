@@ -104,6 +104,20 @@ h3.card_title
     z-index: 1;
 }
 
+@media (max-width: 600px) 
+{
+    .card_title 
+    {
+        position: relative;
+        font-size: 1.5em;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin: 0;
+        white-space: pre-wrap;
+        z-index: 1;
+    }
+}
+
 .card_content 
 {
     position: relative;
