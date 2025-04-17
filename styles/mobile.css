@@ -1,0 +1,159 @@
+@media only screen and (hover: none) and (pointer: coarse)
+{
+    p 
+    {
+        font-size: 11px !important;
+    }
+
+    .font-default
+    {
+        font-size: 11px !important;
+    }
+    
+    .font-small
+    {
+        font-size: 9px !important;
+    }
+    
+    .font-large
+    {
+        font-size: 15px !important;
+    }
+
+    .card
+    {
+        margin: 16px auto;
+    }
+
+    .card-default, .card-large, .card-small
+    {
+        width: calc(100%);
+    }
+
+    .card_header 
+    {
+        min-height: 32px;
+        padding: 8px 8px;
+    }
+
+    .card_content 
+    {
+        padding: 8px 16px; 
+    }
+
+    h2.card_title 
+    {
+        position: relative;
+        font-size: 18px;
+        letter-spacing: 8px;
+        margin: 0;
+        white-space: pre-wrap;
+        z-index: 1;
+        width: 75%;
+        text-align: center;
+    }
+
+    h3.card_title 
+    {
+        position: relative;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin: 0;
+        white-space: pre-wrap;
+        z-index: 1;
+    }
+
+    .card_link_container 
+    {
+        position: absolute;
+        top: 9px;
+        right: 8px;
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+    }
+
+    .card_divider 
+    {
+        height: 2px;
+        margin-top: 4px;
+        margin-bottom: 8px;
+    }
+
+    .tag_container 
+    {
+        gap: 6px;
+        margin-top: 4px;
+    }
+
+    .tag 
+    {
+        padding: 2px 4px;
+        font-size: 10px;
+        border-radius: 6px;
+    }
+
+    .collapsible 
+    {
+        padding: 4px;
+        border-radius: 6px;
+        margin-top: 8px;
+    }
+
+    .collapsible_panel 
+    {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        background-color: #ffffff00;
+        padding-left: 8px;
+        border-left: 2px solid #ffffff;
+        margin-top: 8px;
+        margin-left: 8px;
+        border-radius: 0px;
+    }
+
+    pre code 
+    {
+        display: block;
+        background-color: #00000075;
+        color: #7ea2b4;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Consolas', monospace;
+        font-size: 9px;
+    }
+
+    .p-pad-top
+    {
+        padding-top: 8px;
+    }
+
+    .pad-top-16
+    {
+        padding-top: 8px;
+    }
+
+    .banner-text h1 
+    {
+        font-size: 20px; 
+        letter-spacing: 8px;
+        margin-bottom: 6px;
+        white-space: pre-wrap;
+    }
+
+    .banner-text p
+    { 
+        letter-spacing: 4px;
+        margin: 0;
+    }
+
+    .social-icon 
+    {
+        width: 24px;
+        margin-left: 16px;
+    }
+}

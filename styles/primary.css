@@ -76,21 +76,3 @@ p
 {
     padding-bottom: 1px;
 }
-
-@media only screen and (hover: none) and (pointer: coarse)
-{
-    .font-default
-    {
-        font-size: 13px !important;
-    }
-    
-    .font-small
-    {
-        font-size: 10px !important;
-    }
-    
-    .font-large
-    {
-        font-size: 28px !important;
-    }
-}
