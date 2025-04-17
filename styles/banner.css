@@ -60,6 +60,7 @@
 .banner-text h1 
 {
     font-size: 40px; 
+    letter-spacing: 16px;
     margin-bottom: 6px;
     white-space: pre-wrap;
 }
