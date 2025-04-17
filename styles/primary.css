@@ -56,24 +56,6 @@ p
     font-size: 24px;
 }
 
-@media (max-width: 600px) 
-{
-    .font-default 
-    {
-        font-size: 16px;
-    }
-
-    .font-small 
-    {
-        font-size: 13px;
-    }
-
-    .font-large 
-    {
-        font-size: 25px;
-    }
-}
-
 .font-white
 {
     color: white;

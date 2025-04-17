@@ -85,7 +85,7 @@
 .card_title 
 {
     position: relative;
-    font-size: 2em;
+    font-size: 30px;
     letter-spacing: 0.1em;
     text-align: center;
     margin: 0;
@@ -96,26 +96,12 @@
 h3.card_title 
 {
     position: relative;
-    font-size: 1.25em;
+    font-size: 20px;
     letter-spacing: 0.1em;
     text-align: center;
     margin: 0;
     white-space: pre-wrap;
     z-index: 1;
-}
-
-@media (max-width: 600px) 
-{
-    .card_title 
-    {
-        position: relative;
-        font-size: 1.5em;
-        letter-spacing: 0.1em;
-        text-align: center;
-        margin: 0;
-        white-space: pre-wrap;
-        z-index: 1;
-    }
 }
 
 .card_content 
