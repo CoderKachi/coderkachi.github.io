@@ -1,3 +1,4 @@
+import { loadVideoObservers } from './module-autopause.js';
 import { loadCollapsibles } from './module-collapsible.js';
 
 // Script for dynamically loading content
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function()
             contentDiv.innerHTML = contentHTML;
             await populateCardSlots();
             loadCollapsibles(contentDiv);
+            loadVideoObservers(contentDiv);
         }
 
         // Update button styles

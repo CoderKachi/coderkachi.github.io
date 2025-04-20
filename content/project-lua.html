@@ -24,8 +24,8 @@
 
         <!-- STELLA PROTOTYPE START-->
         <h3 class="card_title">S T E L L A  Prototype</h3>
-        <video class="card_video" muted loop controls>
-            <source src="/assets/videos/stella-gameplay.webm#t=1" type="video/webm" />
+        <video class="card_video" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+            <source data-src="/assets/videos/stella-gameplay.webm" type="video/webm" />
             Your browser does not support the video tag.
         </video>
 
@@ -38,8 +38,7 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                I implemented Procedural Level Generation mostly by using Binary Space Partitioning to divide and create rooms 
-                and a Minimum Spanning Tree algorithm to help ensure all rooms can be reached.
+                I used Binary Space Partitioning to divide the map into rooms and a Minimum Spanning Tree algorithm to ensure all rooms are connected and accessible.
             </p>
             <!-- COLLAPSIBLE -->
             <button class="collapsible font-default">
@@ -49,8 +48,8 @@
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    Objects could be easily placed onto the level since it was all grid / room based. I had a variation of rooms and tiles that would
-                    be placed as the final steps of the generation process.
+                    The level’s grid and room-based structure made placing objects straightforward. 
+                    A variety of pre-defined rooms and tile types were applied during the final stages of generation.
                 </p>
             </div>
         </div>
@@ -73,22 +72,15 @@
                 <i class="fa-solid fa-plus collapsible_icon"></i>
             </button>
             <div class="collapsible_panel">
-                <p class="font-default">I implemented some camera recoil to compliment the partical effects.</p>
+                <p class="font-default p-padding">I implemented some camera recoil to compliment the partical effects.</p>
+                <h3 class="card_title font-default">Weapon Handling</h3>
+                <div class="card_content-center">
+                    <video class="card_video card_video-small" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+                        <source data-src="/assets/videos/stella-camrecoil.webm" type="video/webm" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
-        </div>
-
-        <!-- COLLAPSIBLE -->
-        <button class="collapsible font-default">
-            <i class="fa-solid fa-film"></i>
-            <span class="collapsible_label">Basic Procedural Animation</span>
-            <i class="fa-solid fa-plus collapsible_icon"></i>
-        </button>
-        <div class="collapsible_panel">
-            <p class="font-default">
-                I incorporated some basic procedural animations to complement the static animations that the custom chacacters used.
-                The head would be look towards the mouse and was clamped to not look un-natural when players attempted to look backwards while 
-                the entire character would tilted towards the direction they were rotating towards during motion.
-            </p>
         </div>
         
         <!-- COLLAPSIBLE -->
@@ -99,21 +91,43 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                I implemented some basic AI that would shoot at the player via the Weapon Framework. Naturally they can only do this when the 
-                player is within range and in line of sight. If the player falls out of their line of sight they move towards the last position 
-                they saw the player at.
+                I implemented simple AI that attacks the player using the Weapon Framework. 
+                Enemies shoot only when the player is within range and visible. 
+                If the player breaks line of sight, they move toward the last known position.
             </p>
         </div>
         <!-- STELLA PROTOTYPE END -->
 
         <!-- COMPLEX PROTOTYPE-->
         <h3 class="card_title pad-top-16">C O M P L E X  Prototype</h3>
-        <video class="card_video" muted loop controls>
-            <source src="/assets/videos/project-complex01.webm#t=2" type="video/webm" />
+        <video class="card_video" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+            <source data-src="/assets/videos/project-complex01.webm" type="video/webm" />
             Your browser does not support the video tag.
         </video>
         
         <h3 class="card_title pad-top-16">Key Features</h3>
+
+        <!-- COLLAPSIBLE -->
+        <button class="collapsible font-default">
+            <i class="fa-solid fa-film"></i>
+            <span class="collapsible_label">Basic Procedural Animation</span>
+            <i class="fa-solid fa-plus collapsible_icon"></i>
+        </button>
+        <div class="collapsible_panel">
+            <p class="font-default p-padding">
+                I added simple procedural animations to enhance the static ones used by my custom characters. 
+                The head automatically tracks the mouse within a clamped range to avoid unnatural twisting, and the body subtly tilts in the direction of rotation while moving.
+            </p>
+            <h3 class="card_title font-default">Procedural Animation while Walking</h3>
+            <div class="card_content-center">
+                <video class="card_video card_video-small" muted loop playsinline controls preload="none" poster="/assets/images/placeholder.png">
+                    <source data-src="/assets/videos/complex-animations.webm" type="video/webm" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- COLLAPSIBLE -->
         <button class="collapsible font-default">
             <i class="fa-solid fa-eye"></i>
             <span class="collapsible_label">Line of Sight Simulation & Wall Culling</span>
@@ -121,9 +135,8 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                I implemented a feature which allowed me to hide rooms and characters that were out of the player's line of sight. I also
-                implemented another feature that would lower the 2 walls that would partially obscure objects beside said wall 
-                (due to the camera angle being used).
+                I implemented a system to hide rooms and characters outside the player’s line of sight. 
+                Additionally, walls that partially obscured nearby objects (due to the camera angle) would automatically lower to improve visibility.
             </p>
         </div>
     </div>

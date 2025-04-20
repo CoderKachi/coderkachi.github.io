@@ -173,4 +173,15 @@
         width: 24px;
         margin-left: 16px;
     }
+
+    .audio_container
+    {
+        transform: scale(0.6);
+    }
+
+    .card_video-small
+    {
+        max-width: 720px;
+    }
+
 }

@@ -8,6 +8,9 @@
             <a href="https://mikosriko.itch.io/cheat-o" class="card_link font-large" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-itch-io"></i>
             </a>
+            <a href="https://github.com/PioneerShark/MakeMeLaugh" class="card_link font-large" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
 
         <!-- HEADER CONTENT -->
@@ -35,8 +38,8 @@
         </p>
 
         <h3 class="card_title">Showcase</h3>
-        <video class="card_video" autoplay muted loop>
-            <source src="/assets/videos/cheato-gameplay.webm" type="video/webm" />
+        <video class="card_video" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+            <source data-src="/assets/videos/cheato-gameplay.webm" type="video/webm" />
             Your browser does not support the video tag.
         </video>
         
@@ -66,15 +69,27 @@
             <i class="fa-solid fa-plus collapsible_icon"></i>
         </button>
         <div class="collapsible_panel">
-            <p class="font-default">
+            <p class="font-default p-padding">
                 I created two soundstracks based on the gamejam theme in around 24 hours.
             </p>
-            <p class="font-default">
-                [Audio]
-            </p>
-            <p class="font-default">
-                [Audio]
-            </p>
+
+            <h3 class="card_title font-default">"Give Them a Show"</h3>
+            <div class="card_content-center" style="flex-direction: row;">
+                <div class="audio_container">
+                    <audio controls>
+                        <source src="/assets/audio/Give Them a Show.ogg" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
+
+            <h3 class="card_title font-default pad-top-16">"Clown's Respite"</h3>
+            <div class="card_content-center" style="flex-direction: row;">
+                <div class="audio_container">
+                    <audio controls>
+                        <source src="/assets/audio/Clown's Respite.ogg" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -76,3 +76,10 @@ p
 {
     padding-bottom: 1px;
 }
+
+.audio_container
+{
+    transform: scale(0.8);
+    transform-origin: center;
+    width: max-content;
+}

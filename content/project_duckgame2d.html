@@ -32,8 +32,8 @@
         <p class="font-default p-padding">A key focus of the project has been designing modular, reusable systems that can be leveraged in larger or alternative Unity projects.</p>
 
         <h3 class="card_title">Showcase</h3>
-        <video class="card_video" autoplay muted loop controls>
-            <source src="/assets/videos/duckgame2d-gameplay.webm" type="video/webm" />
+        <video class="card_video" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+            <source data-src="/assets/videos/duckgame2d-gameplay.webm" type="video/webm" />
             Your browser does not support the video tag.
         </video>
 
@@ -62,7 +62,7 @@
                 <p class="font-default p-padding">
                     I built a service based on Unity's Input System to handle player controls modularly.
                     It sets up a PlayerInput component at runtime and exposes simple methods for hooking into input events by name.
-                    The goal was to keep input handling clean and intuitive, making it easy for my co-programmer to use without needing to dive into the underlying setup.
+                    The goal was to keep input handling clean, intuitive and modular.
                 </p>
                 <h3 class="card_title font-default">Exmaple Usage</h3>
                 <div class="card_content-center">
@@ -100,10 +100,10 @@ public class Someclass : MonoBehaviour
                     The service lets you register an object as a template for pooled instances, with optional variants and an initial pool size.
                     It supports delayed releases and offers intuitive methods for fetching and recycling objects.
                 </p>
-                <h3 class="card_title font-default">Demo</h3>
+                <h3 class="card_title font-default">Object Pooling being used for Projectiles</h3>
                 <div class="card_content-center">
-                    <video class="card_video card_video-small" muted loop controls>
-                        <source src="/assets/videos/duckgame2d-objectpooling.webm#t=2" type="video/webm" />
+                    <video class="card_video card_video-small" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+                        <source data-src="/assets/videos/duckgame2d-objectpooling.webm" type="video/webm" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

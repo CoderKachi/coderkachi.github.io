@@ -1,1 +1,2 @@
-Nothing to see here.
+Mobile Update: 7
+Content Update: 2
