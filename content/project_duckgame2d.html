@@ -31,7 +31,13 @@
 
         <p class="font-default p-padding">A key focus of the project has been designing modular, reusable systems that can be leveraged in larger or alternative Unity projects.</p>
 
-        <h3 class="card_title">Key Contributions</h3>
+        <h3 class="card_title">Showcase</h3>
+        <video class="card_video" autoplay muted loop controls>
+            <source src="/assets/videos/duckgame2d-gameplay.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+
+        <h3 class="card_title pad-top-16">Key Contributions</h3>
         <!-- COLLAPSIBLE -->
         <button class="collapsible font-default">
             <i class="fa-solid fa-circle-nodes"></i>
@@ -42,8 +48,7 @@
             <p class="font-default">
                 To manage core systems like audio, object pooling, and player input, I built a central Service Locator. 
                 Each system was implemented as a self-contained service, easily accessible from anywhere in the game without needing manual setup or scene references.
-                These services are created only when first used, keeping things lightweight and efficient. 
-                Once initialised, they persist across scenes, ensuring they're accessibe throughout the game. 
+                These services are in only instantiated when first used, they persist across scenes, ensuring they're accessibe throughout the game. 
                 This approach allowed us to keep our core systems modular.
             </p>
 
@@ -54,9 +59,33 @@
                 <i class="fa-solid fa-plus collapsible_icon"></i>
             </button>
             <div class="collapsible_panel">
-                <p class="font-default">
-                    [InputService.cs]
+                <p class="font-default p-padding">
+                    I built a service based on Unity's Input System to handle player controls modularly.
+                    It sets up a PlayerInput component at runtime and exposes simple methods for hooking into input events by name.
+                    The goal was to keep input handling clean and intuitive, making it easy for my co-programmer to use without needing to dive into the underlying setup.
                 </p>
+                <h3 class="card_title font-default">Exmaple Usage</h3>
+                <div class="card_content-center">
+                    <img class="card_image" src="/assets/images/duckgame2d-userinput.png">
+                </div>
+                <pre><code class="language-c#">
+using UnityEngine;
+using UnityEngine.InputSystem;
+using static Framework;
+public class Someclass : MonoBehaviour
+{
+    void Start()
+    {
+        Game.InputService.Connect("Move", OnMove);
+    }
+
+    void OnMove(InputAction.CallbackContext context)
+    {
+        Vector2 moveVector2D = context.ReadValue<Vector2>();
+        Do stuff...
+    }
+}
+                </code></pre>
             </div>
 
             <!-- COLLAPSIBLE -->
@@ -66,9 +95,18 @@
                 <i class="fa-solid fa-plus collapsible_icon"></i>
             </button>
             <div class="collapsible_panel">
-                <p class="font-default">
-                    [PoolService.cs]
+                <p class="font-default p-padding">
+                    I implemented a pooling system to imporve performance by reducing instantiation overhead.
+                    The service lets you register an object as a template for pooled instances, with optional variants and an initial pool size.
+                    It supports delayed releases and offers intuitive methods for fetching and recycling objects.
                 </p>
+                <h3 class="card_title font-default">Demo</h3>
+                <div class="card_content-center">
+                    <video class="card_video card_video-small" muted loop controls>
+                        <source src="/assets/videos/duckgame2d-objectpooling.webm#t=2" type="video/webm" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
 
             <!-- COLLAPSIBLE -->
@@ -79,7 +117,9 @@
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    [AudioService.cs]
+                    A simple service I created to manage in-game audio, including background music and sound effects.
+                    It sets up audio sources for both OST and UI sounds and provides methods to play sound effects at specific locations or globally.
+                    Additionally, it allows volume control via Unity Audio Mixers and uses object pooling for sound effects to improve performance.
                 </p>
             </div>
         </div>
@@ -92,7 +132,9 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                [Entity2D.cs]
+                I contributed to the implementation of Entity2D as a base class for game objects with health, hitboxes, and movement.
+                It includes methods for modifying health, handling invulnerability, and applying visual effects like flashing.
+                Additionally, I implemented warnings that ensure essential components (collider, hitbox, rigidbody, and model) are properly set up and ready at runtime.
             </p>
 
             <!-- COLLAPSIBLE -->
@@ -103,7 +145,9 @@
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    [Charcater2D.cs]
+                    The Character2D class extends Entity2D to represent controllable players or agents (AI) with dashing and combat abilities.
+                    I primarily contributed by adding functionality to control character movement and orientation, ensuring characters look and move in the desired direction.
+                    I also introduced debugging features to visualize these behaviors, aiding development.
                 </p>
             </div>
         </div>

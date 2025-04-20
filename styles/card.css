@@ -121,7 +121,31 @@ h3.card_title
     width: 100%;
     max-width: 720px;
     object-fit: cover;
-    z-index: -1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.card_video-small
+{
+    max-width: 480px;
+}
+
+.card_content-center
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card_image
+{
+    position: relative;
+    margin: 8px auto;
+    width: 100%;
+    max-width: 720px;
+    object-fit: cover;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid white;
