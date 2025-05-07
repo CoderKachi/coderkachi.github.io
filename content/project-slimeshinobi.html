@@ -48,10 +48,8 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                [Saving & Loading Player Info]
-                [Created simple structure to store PlayerInfo]
-                [Isometric Camera]
-                [Audio FX]
+                I created a blueprint system to save and load player data, such as their highest score. 
+                I also set up an isometric camera that follows the player and implemented the slashing sound effect for their primary attack.
             </p>
         </div>
 
@@ -63,8 +61,9 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                [Attack Indicator]
-                [Audio FX]
+                To give players clear feedback during combat, I added visual indicators to enemies showing when and where they would attack. 
+                An outer ring displayed the enemy's attack range, while an inner ring signaled when the attack would be executed.
+                [Video]
             </p>
         </div>
 
@@ -76,7 +75,7 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                [Wave System]
+                I implemented a wave system that spawns enemies at the start of each wave and scales their stats to progressively increase difficulty.
             </p>
             <!-- COLLAPSIBLE -->
             <button class="collapsible font-default">
@@ -86,7 +85,8 @@
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    [Stronger enemies use more Credits]
+                    Enemy spawns were driven by a spawn credit system, where stronger enemies consumed more credits. 
+                    This ensured early waves featured smaller enemies, while later waves introduced larger, tougher ones.
                 </p>
             </div>
         </div>
@@ -99,9 +99,9 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                [Mostly dealt with the HUD]
-                [Created various reusable widgets]
-                [Health, Slowmo and Dash meter]
+                I primarily focused on the in-game HUD, building a set of reusable widgets to simplify UI development. 
+                The health, slow-motion, and dash meters all extend from a flexible base widget that supports features like fading or instantly hiding bars, 
+                customizable colors and an optional divider at a specified point. 
             </p>
         </div>
 
