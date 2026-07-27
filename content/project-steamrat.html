@@ -28,8 +28,8 @@
         <!-- INTRODUCTION -->
         <p class="font-default p-padding">
             This project is focused on developing an end-to-end data analytics tool for Steam user reviews. 
-            The tool currently has systems for data collection (via Steam Web API), local database storage, review processing
-            and analytical workflows to uncover trends in player feedback. 
+            The tool currently has systems for data collection, local database storage, review processing
+            and analytical workflows to help gain insights from player feedback. 
         </p>
 
         <h3 class="card_title">Showcase</h3>
@@ -56,7 +56,11 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default p-padding">
-                The first "complete" version of SteamRAT...
+                The first "complete" version of SteamRAT. This release <b>adds</b> the core dashboard experience, 
+                including <b>overall review statistics, language breakdowns, review history, review inspection and N-Gram visualisation</b>.
+                <br><br>
+                Since the prototype, the analysis pipeline has been significantly improved by <b>integrating spaCy</b> for more accurate text processing, 
+                review simplification and N-Gram generation quality.
             </p>
         </div>
 
@@ -69,7 +73,10 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default p-padding">
-                C# (.NET 10) Command-Line predecessor...
+                The first version of SteamRAT. This release features <b>a .NET 10 Command-Line Tool, that transforms the JSON API responses from the Steam Web API into
+                structured CSV datasets</b> for futher analysis.
+                <br><br>
+                One of these datasets included an N-Gram CSV generated from text that I preprocessed with my own algorithm written in C#.
             </p>
         </div>
     </div>
