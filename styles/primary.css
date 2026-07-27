@@ -20,6 +20,11 @@ p
     width: 100%;
 }
 
+b
+{
+    font-weight: 600;
+}
+
 .p-padding
 {
     padding-bottom: 16px;
