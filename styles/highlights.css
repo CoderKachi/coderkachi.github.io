@@ -1,0 +1,39 @@
+
+.highlight-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 850px));
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 0px;
+}
+
+.card-highlight 
+{
+    max-width: 1000px;
+}
+
+/* Hide all content */
+.card-highlight .card_content > * 
+{
+    display: none;
+}
+
+.highlight-only
+{
+    display: none;
+}
+
+/* Show tagged content */
+.card-highlight .card_content > .highlight-include
+{
+    display: block;
+}
+
+/* Only visible inside highlighted cards */
+.card-highlight .highlight-only
+{
+    display: block;
+}

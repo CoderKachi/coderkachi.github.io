@@ -1,4 +1,4 @@
-<div class="card card-default anim-slidein">
+<div id="steamrat" class="card card-default anim-slidein">
     <div class="card_header" style="background-image: url('/assets/images/steamrat-background.png'); background-position: center 40%;">
         <!-- BACKGROUND CONTENT -->
         <div class="overlay overlay-default"></div>
@@ -24,7 +24,6 @@
         </div>
     </div>
 
-
     <div class="card_content">
         <!-- INTRODUCTION -->
         <p class="font-default p-padding">
@@ -34,10 +33,16 @@
         </p>
 
         <h3 class="card_title">Showcase</h3>
-        <video class="card_video" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
+        <video class="card_video highlight-include" muted loop playsinline preload="none" poster="/assets/images/placeholder.png">
             <source data-src="/assets/videos/steamrat-v0.3.3-beta-showcase.webm" type="video/webm" />
             Your browser does not support the video tag.
         </video>
+
+        <!-- HIGHLIGHT BUTTON -->
+        <button class="project-button collapsible font-default highlight-only" data-page="projects" data-target="steamrat">
+            <i class="fa-solid fa-eye"></i>
+            <span class="collapsible_label">View Full Project</span>
+        </button>
 
         <!-- KEY RELEASES -->
         <h3 class="card_title pad-top-16">Key Releases</h3>

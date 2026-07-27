@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function()
     }
 
     // Load content based on navigation clicks
-    async function loadContent(contentName) 
+    async function loadContent(contentName, targetID = null) 
     {
         // Clear existing dynamic content
         contentDiv.innerHTML = "";
@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function()
             case "contact":
                 contentHTML = await fetchAndLoadHTML("pages/contact.html");
                 break;
+            case "highlights":
+                contentHTML = await fetchAndLoadHTML("pages/highlights.html");
+                break;
             default:
                 contentDiv.innerHTML = "<h1>404 Not Found</h1><p>Page not found.</p>";
                 return;
@@ -50,8 +53,36 @@ document.addEventListener("DOMContentLoaded", function()
         {
             contentDiv.innerHTML = contentHTML;
             await populateCardSlots();
+
+            if (contentName == "highlights")
+            {
+                contentDiv.querySelectorAll(".card").forEach(
+                    card => card.classList.add("card-highlight")
+                );
+            }
+
             loadCollapsibles(contentDiv);
             loadVideoObservers(contentDiv);
+
+            // Scroll to target
+            if (targetID)
+            {
+                const target = document.getElementById(targetID)
+
+                const offset = 280;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - offset;
+
+                if (target)
+                {
+                    const scrollDelay = 300;
+
+                    setTimeout(() =>
+                    {
+                        window.scrollTo({top: offsetPosition, behaviour: "smooth"});
+                    }, scrollDelay);
+                }
+            }
         }
 
         // Update button styles
@@ -108,6 +139,17 @@ document.addEventListener("DOMContentLoaded", function()
 
             loadContent(link.id);
         });
+    });
+
+    // Add event listeners to project buttons
+    document.addEventListener("click", function(event)
+    {
+        const button = event.target.closest(".project-button");
+
+        if (!button)
+            return;
+
+        loadContent(button.dataset.page, button.dataset.target);
     });
 
     loadContent("home");
