@@ -1,4 +1,3 @@
-/* Banner CSS */
 
 .banner_mask 
 {
@@ -9,7 +8,6 @@
     top: 0; 
     z-index: 999; /* Ensure the masking bar is above other content */
 }
-
 
 .banner 
 {
@@ -29,7 +27,6 @@
     top: 32px;
     z-index: 1000; /* Make banner above other content */
 }
-
 
 /* Overlay for dimming */
 .banner::after 

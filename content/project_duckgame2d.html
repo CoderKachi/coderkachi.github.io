@@ -25,8 +25,8 @@
     <div class="card_content">
         <p class="font-default p-padding">
             Duckgame 2D is a small top-down bullet hell.
-            The team consists of 2 programmers (myself included) with both handling all aspects of the game’s systems and features. 
-            We occasionally have 2 external artists create art assets as needed. 
+            This was a duo project with both handling all aspects of the game’s systems and features. 
+            2 external artists would occasionally create art assets as needed. 
         </p>
 
         <p class="font-default p-padding">A key focus of the project has been designing modular, reusable systems that can be leveraged in larger or alternative Unity projects.</p>
@@ -46,9 +46,9 @@
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                To manage core systems like audio, object pooling, and player input, I built a central Service Locator. 
+                To manage core systems like audio, object pooling and player input, I built a central Service Locator. 
                 Each system was implemented as a self-contained service, easily accessible from anywhere in the game without needing manual setup or scene references.
-                These services are in only instantiated when first used, they persist across scenes, ensuring they're accessibe throughout the game. 
+                These services are only instantiated when first used, they persist across scenes, ensuring they're accessibe throughout the game. 
                 This approach allowed us to keep our core systems modular.
             </p>
 
@@ -60,7 +60,7 @@
             </button>
             <div class="collapsible_panel">
                 <p class="font-default p-padding">
-                    I built a service based on Unity's Input System to handle player controls modularly.
+                    <b>Built a service</b> wrapping Unity's Input System <b>to handle player controls modularly</b>.
                     It sets up a PlayerInput component at runtime and exposes simple methods for hooking into input events by name.
                     The goal was to keep input handling clean, intuitive and modular.
                 </p>
@@ -96,7 +96,7 @@ public class Someclass : MonoBehaviour
             </button>
             <div class="collapsible_panel">
                 <p class="font-default p-padding">
-                    I implemented a pooling system to imporve performance by reducing instantiation overhead.
+                    <b>Implemented a pooling service to improve performance</b> by reducing instantiation overhead.
                     The service lets you register an object as a template for pooled instances, with optional variants and an initial pool size.
                     It supports delayed releases and offers intuitive methods for fetching and recycling objects.
                 </p>
@@ -117,9 +117,9 @@ public class Someclass : MonoBehaviour
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    A simple service I created to manage in-game audio, including background music and sound effects.
+                    <b>Created a service to manage in-game audio</b>, including background music and sound effects.
                     It sets up audio sources for both OST and UI sounds and provides methods to play sound effects at specific locations or globally.
-                    Additionally, it allows volume control via Unity Audio Mixers and uses object pooling for sound effects to improve performance.
+                    Additionally, it allows volume control via Unity Audio Mixers and uses pooling.
                 </p>
             </div>
         </div>
@@ -132,9 +132,9 @@ public class Someclass : MonoBehaviour
         </button>
         <div class="collapsible_panel">
             <p class="font-default">
-                I contributed to the implementation of Entity2D as a base class for game objects with health, hitboxes, and movement.
-                It includes methods for modifying health, handling invulnerability, and applying visual effects like flashing.
-                Additionally, I implemented warnings that ensure essential components (collider, hitbox, rigidbody, and model) are properly set up and ready at runtime.
+                Contributed to the implementation of Entity2D as a base class for game objects with health, hitboxes, and movement.
+                It includes methods for modifying health, handling invulnerability and applying visual effects like flashing.
+                Additionally, I implemented warnings that ensure essential components are properly set up and ready at runtime.
             </p>
 
             <!-- COLLAPSIBLE -->
@@ -145,23 +145,11 @@ public class Someclass : MonoBehaviour
             </button>
             <div class="collapsible_panel">
                 <p class="font-default">
-                    The Character2D class extends Entity2D to represent controllable players or agents (AI) with dashing and combat abilities.
-                    I primarily contributed by adding functionality to control character movement and orientation, ensuring characters look and move in the desired direction.
+                    The Character2D class extends Entity2D to represent controllable players or agents with dashing and combat abilities.
+                    I contributed by adding functionality to control character movement and orientation, ensuring characters look and move in the desired direction.
                     I also introduced debugging features to visualise these behaviors, aiding development.
                 </p>
             </div>
-        </div>
-
-        <!-- COLLAPSIBLE -->
-        <button class="collapsible font-default">
-            <i class="fa-solid fa-display"></i>
-            <span class="collapsible_label">User Interface</span>
-            <i class="fa-solid fa-plus collapsible_icon"></i>
-        </button>
-        <div class="collapsible_panel">
-            <p class="font-default">
-                I'm currently looking into using Unity's UI Toolkit since it's inspired by web technologies.
-            </p>
         </div>
     </div>
 </div>

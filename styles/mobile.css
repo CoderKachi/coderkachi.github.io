@@ -1,3 +1,4 @@
+
 @media only screen and (hover: none) and (pointer: coarse), (max-width: 812px), (max-device-width: 812px)
 {
     .root
@@ -184,4 +185,63 @@
         max-width: 720px;
     }
 
+    /* navbar.css */
+    .nav_container 
+    {
+        top: 50px; /* Hacky(?) way to move container down without influencing parents*/
+        border-bottom: 4px solid #16171e;
+    }
+
+    nav ul li a 
+    {
+        font-size: 14px !important;
+        padding: 8px 10px;
+        letter-spacing: 4px;
+    }
+}
+
+/* Typical Phone */
+@media only screen and (hover: none) and (pointer: coarse), (max-width: 450px), (max-device-width: 450px)
+{
+    h2.card_title 
+    {
+        position: relative;
+        font-size: 15px;
+        letter-spacing: 8px;
+        margin: 0;
+        white-space: pre-wrap;
+        z-index: 1;
+        width: 75%;
+        text-align: center;
+    }
+
+    .banner-text p
+    { 
+        letter-spacing: 4px;
+        margin: 0;
+    }
+
+    p 
+    {
+        font-size: 10px !important;
+    }
+
+    .font-default
+    {
+        font-size: 10px !important;
+    }
+
+    /* navbar.css */
+    .nav_container 
+    {
+        top: 43px; /* Hacky(?) way to move container down without influencing parents*/
+        border-bottom: 4px solid #16171e;
+    }
+
+    nav ul li a 
+    {
+        font-size: 12px !important;
+        padding: 4px 6px;
+        letter-spacing: 3px;
+    }
 }
